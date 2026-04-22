@@ -5,6 +5,8 @@ AOS.init({
   easing: "ease-out-cubic"
 });
 
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 const yearEl = document.getElementById("year");
 if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
@@ -32,6 +34,7 @@ window.addEventListener("scroll", () => {
 });
 
 window.addEventListener("load", () => {
+  if (prefersReducedMotion) return;
   const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.85 } });
   tl.from(".hero-copy .eyebrow", { y: 20, opacity: 0 })
     .from(".hero-copy h1", { y: 22, opacity: 0 }, "-=0.52")
@@ -45,6 +48,7 @@ window.addEventListener("load", () => {
 const lights = document.querySelectorAll(".bg-light");
 const routeGrid = document.querySelector(".route-grid");
 window.addEventListener("mousemove", (event) => {
+  if (prefersReducedMotion) return;
   const x = (event.clientX / window.innerWidth - 0.5) * 14;
   const y = (event.clientY / window.innerHeight - 0.5) * 14;
 
@@ -54,11 +58,12 @@ window.addEventListener("mousemove", (event) => {
   });
 
   if (routeGrid) {
-    routeGrid.style.transform = `translate(${x * 0.16}px, ${y * 0.16}px)`;
+    routeGrid.style.transform = `translate(${x * 0.11}px, ${y * 0.11}px)`;
   }
 });
 
 window.addEventListener("scroll", () => {
+  if (prefersReducedMotion) return;
   if (!routeGrid) return;
   const offset = window.scrollY * 0.045;
   routeGrid.style.backgroundPosition = `0 ${offset}px, 0 ${offset}px, 0 0`;

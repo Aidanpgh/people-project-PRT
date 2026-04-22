@@ -1013,3 +1013,133 @@ body {
     font-size: clamp(1.55rem, 7vw, 2.1rem);
   }
 }
+
+/* --- refinement pass: compact hero + demo placeholder --- */
+.hero.section {
+  padding-top: 5.4rem;
+  padding-bottom: 3.9rem;
+}
+
+.hero-grid {
+  grid-template-columns: 1.06fr 0.94fr;
+  gap: 1.3rem;
+  align-items: center;
+}
+
+.hero-copy {
+  padding: 0.2rem 0;
+}
+
+.hero-copy h1 {
+  margin: 0.25rem 0 0.35rem;
+}
+
+.hero-subtitle {
+  margin-bottom: 0.75rem;
+}
+
+.hero-sub {
+  max-width: 56ch;
+  line-height: 1.65;
+}
+
+.hero-cta {
+  margin-top: 1rem;
+}
+
+.mini-stats {
+  margin-top: 0.95rem;
+}
+
+.hero-visual {
+  min-height: 420px;
+}
+
+.solution-demo {
+  padding: 1.1rem;
+  border-radius: 18px;
+}
+
+.demo-header {
+  max-width: 64ch;
+}
+
+.demo-header h3 {
+  margin: 0.35rem 0 0.55rem;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+}
+
+.demo-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.demo-canvas {
+  margin-top: 1rem;
+  border-radius: 14px;
+  padding: 1rem;
+  min-height: 190px;
+  border: 1px solid rgba(173, 194, 223, 0.24);
+  background:
+    linear-gradient(120deg, rgba(53, 184, 255, 0.1), rgba(255, 255, 255, 0.04)),
+    radial-gradient(circle at 84% 14%, rgba(63, 208, 124, 0.18), rgba(63, 208, 124, 0));
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+}
+
+.demo-chip {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  color: #dff1ff;
+  border: 1px solid rgba(165, 191, 224, 0.35);
+  background: rgba(9, 27, 52, 0.68);
+  padding: 0.35rem 0.7rem;
+}
+
+.demo-chip i {
+  color: #85e7b7;
+}
+
+.demo-cta-wrap {
+  margin-top: 0.9rem;
+}
+
+.section {
+  scroll-margin-top: 86px;
+}
+
+@media (max-width: 1024px) {
+  .hero.section {
+    padding-top: 4.8rem;
+    padding-bottom: 3.2rem;
+  }
+
+  .hero-visual {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero.section {
+    padding-top: 4.2rem;
+    padding-bottom: 2.8rem;
+  }
+
+  .hero-grid {
+    gap: 1rem;
+  }
+
+  .hero-visual {
+    min-height: 310px;
+  }
+
+  .demo-canvas {
+    min-height: 160px;
+  }
+}
