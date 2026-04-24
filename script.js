@@ -35,14 +35,14 @@ window.addEventListener("scroll", () => {
 
 window.addEventListener("load", () => {
   if (prefersReducedMotion) return;
-  const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.85 } });
-  tl.from(".hero-copy .eyebrow", { y: 20, opacity: 0 })
-    .from(".hero-copy h1", { y: 22, opacity: 0 }, "-=0.52")
-    .from(".hero-subtitle", { y: 14, opacity: 0 }, "-=0.54")
-    .from(".hero-sub", { y: 16, opacity: 0 }, "-=0.6")
-    .from(".hero-cta .btn", { y: 12, opacity: 0, stagger: 0.12 }, "-=0.58")
-    .from(".mini-stats article", { y: 12, opacity: 0, stagger: 0.08 }, "-=0.5")
-    .from(".hero-visual", { x: 18, opacity: 0 }, "-=0.86");
+  const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
+  tl.from(".hero-copy .eyebrow", { y: 16, opacity: 0 })
+    .from(".hero-copy h1", { y: 18, opacity: 0 }, "-=0.52")
+    .from(".hero-subtitle", { y: 12, opacity: 0 }, "-=0.54")
+    .from(".hero-sub", { y: 12, opacity: 0 }, "-=0.6")
+    .from(".hero-cta .btn", { y: 10, opacity: 0, stagger: 0.1 }, "-=0.58")
+    .from(".mini-stats article", { y: 10, opacity: 0, stagger: 0.08 }, "-=0.5")
+    .from(".hero-visual", { x: 14, opacity: 0 }, "-=0.84");
 });
 
 const lights = document.querySelectorAll(".bg-light");
